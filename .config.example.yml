@@ -1,0 +1,17 @@
+services:
+- name: traefik
+  enabled: true
+  maxReplicas: 10
+  thresholds:
+    cpu:
+      percent: 0.2
+      metric: average
+      duration: 5m
+      scaleUpTimer: 5m
+      scaleDownTimer: 5m
+    memory:
+      percent: 0.6
+      metric: average
+      duration: 1m
+      scaleUpTimer: 5m
+      scaleDownTimer: 5m
